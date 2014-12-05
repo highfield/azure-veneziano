@@ -1,0 +1,69 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Cet.UI.Chart"
+    >
+
+    <Style TargetType="{x:Type local:ChartLegendItemsControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ChartLegendItemsControl}">
+                    <Border 
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        >
+                        <ItemsPresenter
+                            />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel
+                        Orientation="Horizontal"
+                        IsItemsHost="True"
+                        />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplateSelector">
+            <Setter.Value>
+                <local:TypeNameTemplateSelector Pattern="dtplLegendButton*" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    
+    <Style TargetType="{x:Type local:ChartLegendItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ChartLegendItem}">
+                    <Button
+                        Margin="4,2"
+                        BorderBrush="#40000000"
+                        BorderThickness="1"
+                        Background="Transparent"
+                        Width="120"
+                        Padding="2"
+                        Command="{Binding Path=SelectCommand}"
+                        x:Name="PART_Btn"
+                        >
+                        <ContentPresenter
+                            />
+                    </Button>
+                    
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Path=IsEmpty}" Value="True">
+                            <Setter TargetName="PART_Btn" Property="Background" Value="#20000000" />
+                            <Setter TargetName="PART_Btn" Property="TextBlock.Foreground" Value="#80000000" />
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

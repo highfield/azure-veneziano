@@ -1,0 +1,43 @@
+﻿<Window 
+    x:Class="AzureReportDemo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:chart="clr-namespace:Cet.UI.Chart;assembly=Cet.UI.Chart"
+    Title="MainWindow" 
+    Height="600" Width="900"
+    >
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <Menu
+            Grid.Row="0" Grid.Column="0"
+            >
+            <MenuItem Header="Document">
+                <MenuItem Header="Sample report" x:Name="MenuSampleReport" Click="MenuSampleReport_Click" />
+                <MenuItem Header="Built-in styles" x:Name="MenuBuiltInStyles" Click="MenuBuiltInStyles_Click" />
+            </MenuItem>
+        </Menu>
+
+
+        <DockPanel
+            LastChildFill="True"
+            Grid.Row="1" Grid.Column="0"
+            >
+            <chart:ChartLegendItemsControl
+                ItemsSource="{Binding Path=StandardPlots}"
+                DockPanel.Dock="Bottom"
+                HorizontalAlignment="Center"
+                />
+
+            <chart:ChartXYControl
+                />
+        </DockPanel>
+
+
+    </Grid>
+</Window>
