@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{68BA137F-0F22-499A-8D70-8E915094AA08}</ProjectGuid>
+    <RootNamespace>AzureVenezianoLinkIt</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Portables\LinkIt-ONE-IDE-master\hardware\arduino\mtk\cores\arduino;C:\Portables\LinkIt-ONE-IDE-master\hardware\arduino\mtk\variants\linkit_one;C:\Portables\LinkIt-ONE-IDE-master\hardware\arduino\mtk\libraries\LWiFi;C:\Portables\LinkIt-ONE-IDE-master\hardware\arduino\mtk\libraries\LWiFi\utility;C:\Portables\LinkIt-ONE-IDE-master\hardware\arduino\mtk\libraries\LGPS;C:\Portables\LinkIt-ONE-IDE-master\hardware\arduino\mtk\libraries\LGPS\utility;C:\Users\Mario\Documents\Arduino\libraries\HttpClient;C:\Users\Mario\Documents\Arduino\libraries\HttpClient\utility;C:\Users\Mario\Documents\Arduino\libraries\ArduinoJson\src;C:\Users\Mario\Documents\Arduino\libraries\ArduinoJson\src\utility;C:\Portables\LinkIt-ONE-IDE-master\libraries;C:\Portables\LinkIt-ONE-IDE-master\hardware\arduino\mtk\libraries;C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers;C:\Users\Mario\Documents\Arduino\libraries;C:\Portables\LinkIt-ONE-IDE-master\hardware\tools\g++_arm_none_eabi\arm-none-eabi\include;C:\Portables\LinkIt-ONE-IDE-master\hardware\tools\g++_arm_none_eabi\arm_none_eabi\include;C:\Portables\LinkIt-ONE-IDE-master\hardware\tools\g++_arm_none_eabi\lib\gcc\arm-none-eabi\4.4.1\include;C:\Portables\LinkIt-ONE-IDE-master\hardware\tools\g++_arm_none_eabi\lib\gcc\arm-none-eabi\4.4.1\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>C:\Users\Mario\Documents\Arduino\AzureVenezianoLinkIt\Visual Micro\.AzureVenezianoLinkIt.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
+      <PreprocessorDefinitions>__COMPILER_GCC__;__LINKIT_ONE__;__LINKIT_ONE_RELEASE__;USB_VID=0x0E8D;USB_PID=0x0023;USBCON;USB_MANUFACTURER="Unknown";USB_PRODUCT="LinkIt ONE";ARDUINO=156;ARDUINO_MAIN;printf=iprintf;__MTK__;__mtk__;F_CPU=84000000L;__cplusplus;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="AzureVenezianoLinkIt.ino">
+      <FileType>CppCode</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AnalogInputWrapper.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="IInput.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="IInputBoolean.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="IInputDouble.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="IInputInt32.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="InputPortWrapper.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="MobileServiceClient.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="RampGenerator.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="Visual Micro\.AzureVenezianoLinkIt.vsarduino.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AnalogInputWrapper.cpp" />
+    <ClCompile Include="InputPortWrapper.cpp" />
+    <ClCompile Include="MobileServiceClient.cpp" />
+    <ClCompile Include="RampGenerator.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties arduino.upload.port="COM10" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
